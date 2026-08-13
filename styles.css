@@ -1,0 +1,210 @@
+/* === Global Styles === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Page Backgrounds === */
+body.start { background-image: url('/images/start.jpg'); }
+body.list { background-image: url('/images/children.jpg'); }
+body.pay { background-image: url('/images/pay.jpg'); }
+body.signup { background-image: url('/images/signup.jpg'); }
+body.tc { background-image: url('/images/p4.jpg'); }
+body.summa { background-image: url('/images/p1.jpg'); }
+body.update { background-image: url('/images/p2.jpg'); }
+body.tc { background-image: url('/images/tc.jpg'); }
+
+/* === Overlay for readability === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+}
+
+/* === Headings === */
+h1, h2 {
+  text-align: center;
+  color: #163345;
+  
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+/* === Forms === */
+form {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #2a4d69;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4f9da6;
+  box-shadow: 0 0 5px rgba(79,157,166,0.5);
+}
+
+/* === Buttons === */
+button,
+input[type="submit"] {
+  background: #50929c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 50%;
+  display: block;          /* Make button a block-level element */
+  margin: 10px auto;       /* Center horizontally */
+  text-align: center;      /* Center text inside */
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #3b7d80;
+}
+
+/* === Tables === */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #a2c7e5;
+  color: #2a4d69;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #83c4d4;
+}
+
+/* === Lists === */
+ul {
+  max-width: 600px;
+  margin: 20px auto;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  table, form {
+    width: 95%;
+  }
+}
+/* Add space between buttons */
+button {
+  margin-bottom: 12px; /* space below each button */
+}
+
+
+a {
+  text-decoration: none;
+}
+a button {
+  text-decoration: none;
+    margin-bottom: 12px;
+}
+
+
+
+.success-container {
+     background: rgba(42, 77, 105, 0.4); /* #2a4d69 with 40% opacity */
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width:50%;
+    display: block;          /* Make button a block-level element */
+  margin: 100px auto;       /* Center horizontally */
+  color: #f9f9f9;
+}
+
+
+.success-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(241, 225, 225);
+    text-shadow: 0 0 3px white,
+                 0 0 8px rgba(255,255,255,0.7);
+}
+
+.success-details p {
+    margin: 8px 0;
+    font-size: 20px;
+   
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #2980b9;
+}
+
+.no-bg-form {
+    background: none !important;
+    box-shadow: none !important;  /* if there’s a shadow */
+    padding: 0 !important;
+}

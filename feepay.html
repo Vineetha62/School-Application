@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Submissions</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+    <h1>Fee Payment</h1>
+   <form action="/submit-fee" method="POST">
+    <label for="StudentId">Student ID:</label>
+    <input type="number" name="StudentId" required>
+    <label for="Name">Student Name:</label>
+    <input type="text" name="Name" required>
+    <label for="Standard">Standard:</label>
+    <input type="text" id="Standard" name="Standard" required><br><br>
+    <label for="Amount">Fee Amount:</label>
+    <select id="Amount" name="Amount" required>
+  <option value="">--Select Amount--</option>
+  <option value="10000">1st class - Rs.10000</option>
+  <option value="20000">2nd class - Rs.20000</option>
+  <option value="30000">3rd class - Rs.30000</option>
+  <option value="40000">4th class - Rs.40000</option>
+  <option value="50000">5th class - Rs.50000</option>
+  <option value="60000">6th class - Rs.60000</option>
+  <option value="70000">7th class - Rs.70000</option>
+  <option value="80000">8th class - Rs.80000</option>
+  <option value="90000">9th class - Rs.90000</option>
+  <option value="100000">10th class - Rs.100000</option>
+  
+</select><br><br>
+
+    <label for="Date">Payment Date:</label>
+    <input type="date" id="Date" name="Date" required><br><br>
+
+    <button type="submit">Submit Fee</button>
+  </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Payment</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="pay">
+    <h1>Fee Payment</h1>
+    <form action="/submit-fee" method="POST">
+
+        <!-- Student details from Admission Form -->
+        <label>Student ID:</label>
+        <input type="text" name="StudentId" id="StudentId" readonly><br><br>
+
+        <label>Student Name:</label>
+        <input type="text" name="Name" id="Name" readonly><br><br>
+
+        <label>Standard:</label>
+        <input type="text" name="Standard" id="Standard" readonly><br><br>
+
+        <!-- Fee details -->
+        <label for="Amount">Fee Amount:</label>
+        <input type="text" id="Amount" name="Amount" readonly required><br><br>
+
+        <label for="Date">Payment Date:</label>
+        <input type="date" id="Date" name="Date" required><br><br>
+
+        <label for="Mode">Payment Mode:</label>
+        <select id="Mode" name="Mode" required>
+            <option value="">--Select Mode--</option>
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="UPI">UPI</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+        </select><br><br>
+
+        <button type="submit">Submit Fee</button>
+    </form>
+
+    <script>
+        // Extract query parameters and fill inputs
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('StudentId').value = params.get('StudentId');
+        document.getElementById('Name').value = params.get('Name');
+        document.getElementById('Standard').value = params.get('Standard');
+const standard = params.get('Standard');
+document.getElementById('Standard').value = standard;
+
+const fee = parseInt(standard) * 10000;
+        if (!isNaN(fee)) {
+            document.getElementById('Amount').value = fee;
+        }
+    </script>
+</body>
+</html>

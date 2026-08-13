@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Student Info</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body class="update">
+  <h2>Update Student Details</h2>
+  <form action="/update-student" method="POST">
+    <label for="StudentId">Roll Number:</label>
+    <input type="number" id="StudentId" name="StudentId" required><br><br>
+
+    <label for="Name">New Name:</label>
+    <input type="text" id="Name" name="Name" required><br><br>
+
+    <label for="Standard">New Class:</label>
+    <input type="text" id="Standard" name="Standard" required><br><br>
+
+    <label for="Addr">New Address:</label>
+    <input type="text" id="Address" name="Address" required><br><br>
+
+    <button type="submit">Update Student</button>
+  </form>
+</body>
+</html>
